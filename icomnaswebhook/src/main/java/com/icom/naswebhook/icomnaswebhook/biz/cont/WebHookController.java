@@ -30,6 +30,11 @@ public class WebHookController {
        webHookService.giteaForNas(dto);
     }
 
+    @GetMapping("/test")
+    public String test(){
+        return "ok";
+    }
+
 
 
 }
