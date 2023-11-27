@@ -1,0 +1,18 @@
+
+Server:
+  shutdown: graceful
+  servlet:
+  host: localhost
+  port: 9001
+
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    default: local
+  #  main:
+  #    allow-bean-definition-overriding: true
+  application:
+    name: icomsyswebhook
