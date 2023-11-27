@@ -26,15 +26,8 @@ public class WebHookController {
 
 
     @PostMapping("/gitea")
-    public void giteaForSlack(@RequestBody Gitea dto){
-        StringBuffer sb = new StringBuffer();
-        for(Commit e : dto.getCommits()){
-            sb.append(e.getId().substring(0,7)+":"+e.getMessage().split("\n")[0] +" - "+ e.getAuthor().username + "\n");
-        }
-        webHookService.NasSendMessage(dto.getRepository().full_name +":"+ dto.getRef() +" "+ dto.getCommits().size() + " new commit pushed by "+ dto.getPusher().username + "\n"
-        + dto.getRepository().getHtml_url() + "\n"
-        + sb.toString()
-        );
+    public void giteaForNas(@RequestBody Gitea dto){
+       webHookService.giteaForNas(dto);
     }
 
 

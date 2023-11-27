@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.icom.naswebhook.icomnaswebhook.biz.conf.ConfRestCilent;
 import com.icom.naswebhook.icomnaswebhook.biz.conf.ConfRestTemplate;
 import com.icom.naswebhook.icomnaswebhook.biz.vo.Nas;
+import com.icom.naswebhook.icomnaswebhook.biz.vo.gitea.Gitea;
+import com.icom.naswebhook.icomnaswebhook.biz.vo.gitea.child.Commit;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
@@ -23,7 +25,18 @@ public class WebHookService {
         NasSendMessage("test!!!!");
     }
 
-    public void NasSendMessage(String message) {
+    public void giteaForNas(Gitea dto){
+        StringBuffer sb = new StringBuffer();
+        for(Commit e : dto.getCommits()){
+            sb.append(e.getId().substring(0,7)+":"+e.getMessage().split("\n")[0] +" - "+ e.getAuthor().username + "\n");
+        }
+        NasSendMessage(dto.getRepository().full_name +":"+ dto.getRef() +" "+ dto.getCommits().size() + " new commit pushed by "+ dto.getPusher().username + "\n"
+                + dto.getRepository().getHtml_url() + "\n"
+                + sb.toString()
+        );
+    }
+
+    private void NasSendMessage(String message) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         String apiUrl = "https://192-168-0-2.icomsysnas.direct.quickconnect.to:5001/webapi/entry.cgi?api=SYNO.Chat.External&method=incoming&version=2&token=KiOl8r02kMpB70psuq5yWUOSfv9CzF6mWOhHnIuqSjkkawgusF9qhqCh191HdcCK";
