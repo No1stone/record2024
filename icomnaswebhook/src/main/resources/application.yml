@@ -1,7 +1,6 @@
 
 Server:
   shutdown: graceful
-  servlet:
   host: localhost
   port: 9001
 
