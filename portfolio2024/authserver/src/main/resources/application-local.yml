@@ -1,0 +1,58 @@
+server:
+  host: localhost
+  port: 9001
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  config:
+    activate:
+      on-profile: local
+      #컨피그서버로변경예정
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: net.sf.log4jdbc.DriverSpy
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    type: org.apache.tomcat.jdbc.pool.DataSource
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 60000
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        prefetch: 5
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+#        dialect: org.hibernate.dialect.Oracle10gDialect
+#        dialect: com.icomsys.main_vm.common.util.CustomDialect
+#https://docs.jboss.org/hibernate/orm/3.5/javadocs/org/hibernate/dialect/package-summary.html
+  flyway:
+    enabled: false
+    baseline-on-migrate: false
+    baseline-version: 1
+
+  redis:
+    host: localhost
+    port: 6379
+# configserver로 사용예정 로컬용
+jwt:
+  secret: QUq9nHowGCefhnGOEd5E/aK3zUWo/KMVeoG46aZhGXmO7eQKkGC6KLQRQ5V1cZKY+f7sFlnzsQTLHYpBNQEW3w1MrUVDhGn0R244mwbwqXPSh+0n8e7a6lC/SK1TksDVDu8vkyjViVfyOpvr5HM5+rH7jgS6cqKyK4TJncAo7/Qxj38vBsF1ccVRH2/0PhWel9pG35rTtWCmLcoH53Vuv1fAfRXeQq3wd1wkGtjVXV/y3zusB5CcObNraBA/6+D0CwCebyntgrx1z+w1xpS52hyUsoZaOhkPIux4hA3jTL1b9zAUuS9Sm/N+CYz8W/6E9M1PdkQdxfKcp32Gpf6C
+  accessMillis: 86400000 #1일
+  refreshMillis: 15552000000 #180일

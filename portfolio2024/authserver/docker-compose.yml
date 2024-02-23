@@ -1,0 +1,16 @@
+version: "3"
+services:
+  authserver:
+    container_name: authserver
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9001:9001
+#    environment:
+#      DB_URL: ${DB_PASSWORD}
+#      DB_USERNAME: ${DB_USERNAME}
+#      DB_PASSWORD: ${DB_PASSWORD}
+#    env_file: .env
+    network_mode: host

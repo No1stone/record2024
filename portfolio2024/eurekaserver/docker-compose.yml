@@ -1,0 +1,9 @@
+version: "3"
+services:
+  eurekaserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8761:8761

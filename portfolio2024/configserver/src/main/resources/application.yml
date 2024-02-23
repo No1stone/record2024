@@ -1,0 +1,28 @@
+
+server:
+  shutdown: graceful
+#  servlet:
+#    context-path: /config
+  host: localhost
+  port: 8888
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///home/wonseok/Documents/origemiteserver/configyml
+#          uri: https://git.origemite.com/JANGWONSEOK/confgyml.git
+          username: jangws1003@naver.com
+          password: ${GIT_PASSWORD}
+#          refresh-rate: 10
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        prefetch: 5

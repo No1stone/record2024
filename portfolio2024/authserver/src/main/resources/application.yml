@@ -1,0 +1,68 @@
+
+
+server:
+  shutdown: graceful
+  servlet:
+    context-path: /auth
+
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    default: local
+  #  main:
+  #    allow-bean-definition-overriding: true
+  application:
+    name: authserver
+  jpa:
+    properties:
+      #      hibernate:   #??? DB?????? ???? ????
+      #        dialect: org.hibernate.dialect.MySQL57Dialect
+      #        storage_engine: innodb
+      format_sql: true
+      default_batch_fetch_size: 1000
+    show_sql: true
+    format_sql: true
+    use_sql_comments: true
+    jackson:
+      serialization:
+        fail-on-empty-beans: false
+    open-in-view: false
+#  devtools:
+#    livereload:
+#      enabled: false
+#    restart:
+#      enabled: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 50MB
+
+logging:
+  jdbc:
+    sqlonly: off
+    sqltiming: debug
+    audit: off
+    resultset: off
+    resultsettable: debug
+#    connection: off
+
+
+# config server actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, httpexchanges, busrefresh, info, metrics, prometheus
+
+
+#swagger:
+#  url: /swagger-ui/index.html#
+
+# swagger-ui custom path
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

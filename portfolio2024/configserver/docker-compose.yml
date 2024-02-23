@@ -1,0 +1,12 @@
+version: "3"
+services:
+  configserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8888:8888
+    environment:
+      GIT_PASSWORD: ${GIT_PASSWORD}
+    env_file: .env
