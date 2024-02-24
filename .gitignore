@@ -41,3 +41,4 @@ out/
 /src/main/java/com/origemite/authserver/data/db/entity/TbTest.java
 /src/main/java/com/origemite/authserver/data/db/repo/TbTestRepo.java
 /.env
+/mysql-master-data/**
