@@ -18,12 +18,12 @@
         2. 뷰테이블을 조회시 테이블생성쿼리가 동작하여 성능이좋지않은 unionQuery 조회.    
 
 2.  N번이상 조인이 들어간 endpoint Table의 상태 동적업데이트  
-    case: 1트랜젝션 이내에 처리해야하는 쿼리로 Bulk Update를 처리해야함   
+    case: 1트랜젝션 이내에 처리해야하는 쿼리로 Bulk Modify를 처리해야함   
          ( 전화 캠페인으로서 대기열 테이블의 상태를 변경 및 키워드로 분기 액션을 취하는상황 )  
     제약사항: BulkUpdate 1 Transaction    
     문제:   
          1. InQuery를 사용하기에 데이터양을 알수없음       
          2. 시도회수, API성공Status, 서버에서 반환받은Status, 현재상태Status등 다중케이스 업데이트      
-         3. 벌크업데이트, 벌크인서트 가 이루어짐  
+         3. BulkUpdate, BulkInsser, BulkDelete 가 이루어짐  
     헤결: entityManager NativeQuery 사용   
     부작용: 네이티브 쿼리사용으로 IDE레벨에서 즉각 디버깅이 힘듬.   
