@@ -1,0 +1,28 @@
+version: "3"
+services:
+  mysqlqt:
+    container_name: mysqlqt
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: qtdb
+      MYSQL_USER: qt
+      MYSQL_PASSWORD: 1234
+      TZ: Asia/Seoul
+#    env_file: .env
+    command:
+      - --server-id=1
+      - --log-bin=mysql-bin
+      - --gtid-mode=ON
+      - --enforce-gtid-consistency
+      - --sql-mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+      - --bind-address=0.0.0.0
+      - --mysqlx-bind-address=0.0.0.0
+    ports:
+      - "3320:3306"
+    volumes:
+      - ./mysql-master-data:/var/lib/mysql
+      - ./mysql-master-data:/etc/mysql/conf.d
+      - ./mysql-master-data:/var/log/mysql
+
