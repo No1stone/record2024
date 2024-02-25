@@ -12,7 +12,7 @@ public class JdbcTemplateRepo {
     public void dropCase1(){
         jdbcTemplate.execute("drop view CASE1_VIEW;" );
         jdbcTemplate.execute("drop table CASE1_USER;" );
-        jdbcTemplate.execute("drop table CASE1_COSTOMER;" );
+        jdbcTemplate.execute("drop table CASE1_CUSTOMER;" );
         jdbcTemplate.execute("drop table CASE1_GROUP;" );
     }
 
@@ -26,7 +26,7 @@ public class JdbcTemplateRepo {
                 "  PRIMARY KEY (USER_ID)" +
                 ") COMMENT '유저' CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci" );
 
-        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS CASE1_COSTOMER" +
+        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS CASE1_CUSTOMER" +
                 "(" +
                 "  CTM_ID    VARCHAR(50) NOT NULL," +
                 "  CTM_NAME  VARCHAR(50) NOT NULL," +
@@ -52,14 +52,15 @@ public class JdbcTemplateRepo {
                 "     , us.USER_NAME AS 'profile_name'" +
                 " FROM CASE1_USER us" +
                 " UNION ALL" +
-                " SELECT 'COSTOMER'       AS 'profile_type'" +
+                " SELECT 'CUSTOMER'       AS 'profile_type'" +
                 "     , ctm.CTM_ID   AS 'profile_id'" +
                 "     , ctm.CTM_NAME AS 'profile_name'" +
-                " FROM qtdb.CASE1_COSTOMER ctm" +
+                " FROM qtdb.CASE1_CUSTOMER ctm" +
                 " UNION ALL" +
                 " SELECT 'GROUP'       AS 'profile_type'" +
                 "     , grp.GRP_ID   AS 'profile_id'" +
                 "     , grp.GRP_NAME AS 'profile_name'" +
                 " FROM qtdb.CASE1_GROUP grp;");
     }
+
 }

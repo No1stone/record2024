@@ -17,7 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.origemite.querytouble.data.db.repo")
+@EnableJpaRepositories("com.origemite.querytouble.data.db.repo.**")
 public class ConfigDatasource {
 
 
@@ -74,7 +74,7 @@ public class ConfigDatasource {
     public EntityManagerFactory entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("com.origemite.authserver.data.db.entity");
+        em.setPackagesToScan("com.origemite.querytouble.data.db.entity.**");
         final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 //		vendorAdapter.setShowSql(true);
 //		vendorAdapter.setGenerateDdl(true);
