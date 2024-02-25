@@ -7,8 +7,8 @@
         서브쿼리에 where 절을 사용해야함.  
     제약사항:    
         1. 고객사의 허락없이는 서트파티 추가 불가 Query 처리.    
-        2. PM이 쿼리로 처리 하라고 지시한 사항.
-    문제: 회사정보, 유저정보, 단체 등 각각의 Table로 존재하는상황 (ex. linkedin profile)
+        2. PM이 쿼리로 처리 하라고 지시한 사항.  
+    문제: 회사정보, 유저정보, 단체 등 각각의 Table로 존재하는상황 (ex. linkedin profile)   
     해결: View Table을 UnionALL로 생성 후 JPA Entity로 해당 테이블 조회   
     부작용:    
         1. 테이블 수정이 있을 경우 view테이블과 의존관계가 발생하여 유지보수가 불편함.   
