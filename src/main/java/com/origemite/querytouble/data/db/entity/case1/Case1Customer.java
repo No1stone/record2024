@@ -12,7 +12,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import java.time.LocalDateTime;
 
-@Table(name = "CASE1_CUSTMER")
+@Table(name = "CASE1_CUSTOMER")
 @Entity
 @Getter
 @Setter
