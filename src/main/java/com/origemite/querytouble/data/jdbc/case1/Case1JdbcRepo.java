@@ -1,4 +1,4 @@
-package com.origemite.querytouble.data.jdbc;
+package com.origemite.querytouble.data.jdbc.case1;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @RequiredArgsConstructor
-public class JdbcTemplateRepo {
+public class Case1JdbcRepo {
     private final JdbcTemplate jdbcTemplate;
 
     public void dropCase1(){
