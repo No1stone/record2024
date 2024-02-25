@@ -4,8 +4,8 @@
 
 1. unionAll 처리  
     case: jpa, queryDSL 로만 처리해야하는 쿼리에서 unionALL,  
-        서브쿼리에 where 절을 사용해야함.
-    제약사항:   
+        서브쿼리에 where 절을 사용해야함.  
+    제약사항:    
         1. 고객사의 허락없이는 서트파티 추가 불가 Query 처리.    
         2. PM이 쿼리로 처리 하라고 지시한 사항.
     문제: 회사정보, 유저정보, 단체 등 각각의 Table로 존재하는상황 (ex. linkedin profile)
