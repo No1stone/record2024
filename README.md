@@ -16,9 +16,8 @@
         3. JPA DDL Auto 사용불가. (view 테이블이 엔티티로생성됨.)
 
 2.  N번이상 조인이 들어간 endpoint Table의 상태 동적업데이트  
-    case: 1트랜젝션 이내에 처리해야하는 쿼리로 Bulk Modify를 처리해야함   
-         ( 전화 캠페인으로서 대기열 테이블의 상태를 변경 및 키워드로 분기 액션을 취하는상황 )  
-    제약사항: BulkUpdate 1 Transaction    
+    case: 조인되는 테이블들의 조건에 해당하는 end Point table 데이터 벌크업데이트   
+    제약사항: 여러 테이블을 전부 확인하고 벌크업데이트를 해야함.     
     문제:   
          1. InQuery를 사용하기에 데이터양을 알수없음       
          2. 시도회수, API성공Status, 서버에서 반환받은Status, 현재상태Status등 다중케이스 업데이트      
