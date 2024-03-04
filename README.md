@@ -15,12 +15,12 @@
         2. 뷰테이블을 조회시 테이블생성쿼리가 동작하여 성능이좋지않은 unionQuery 조회/인덱스도 불가.    
         3. JPA DDL Auto 사용불가. (view 테이블이 엔티티로생성됨.)
 
-2.  N번이상 조인이 들어간 endpoint Table의 상태 동적업데이트  
+2.  N번이상 조인이 들어간 endpoint Table의 상태 동적업데이트   
     case: 조인되는 테이블들의 조건에 해당하는 end Point table 데이터 벌크업데이트   
     제약사항: 여러 테이블을 전부 확인하고 벌크업데이트를 해야함.     
     문제:   
          1. InQuery를 사용하기에 데이터양을 알수없음       
          2. 시도회수, API성공Status, 서버에서 반환받은Status, 현재상태Status등 다중케이스 업데이트      
-         3. BulkUpdate, BulkInsser, BulkDelete 가 이루어짐  
+         3. BulkUpdate, BulkInsser, BulkDelete 가 이루어짐   
     헤결: entityManager NativeQuery 사용   
-    부작용: 네이티브 쿼리사용으로 IDE레벨에서 즉각 디버깅이 힘듬.   
+    부작용: 네이티브 쿼리사용으로 IDE레벨에서 즉각 디버깅이 힘듬.    
