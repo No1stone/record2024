@@ -32,5 +32,9 @@ public class Case2End {
         this.endPoint = endPoint;
     }
 
+    public Case2End endPointUpdate(String s){
+        this.endPoint= s;
+        return this;
+    }
 
 }
