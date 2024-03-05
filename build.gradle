@@ -26,7 +26,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-jooq'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-
+    implementation 'com.googlecode.log4jdbc:log4jdbc:1.2'
 //    implementation 'org.jooq:jooq-codegen:3.19.5'
 
 
