@@ -1,0 +1,5 @@
+
+spring:
+  jooq:
+    sql-dialect: Mysql
+# https://www.jooq.org/javadoc/latest/org.jooq/org/jooq/SQLDialect.html
