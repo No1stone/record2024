@@ -16,3 +16,13 @@ Java 기반의 쿼리를작성하고 싶으면 Codejen을 추가하라고한다.
 
 Jooq Javadoc
 https://www.jooq.org/javadoc/latest/org.jooq/module-summary.html
+
+Jooq Java Bean
+https://www.jooq.org/doc/latest/manual/code-generation/codegen-configuration/
+
+LazyConnection 사용하려면 bean으로 사용하는게 편해서
+콘피그로 등록하려는데...
+![jooqconf.png](img%2Fjooqconf.png)
+이렇게설정하면 QueryDsl처럼 Q파일이 생성되야할거같은데  
+묵묵부답이다.. 뭐가잘못된건지 찾아봐야거할같다.
+

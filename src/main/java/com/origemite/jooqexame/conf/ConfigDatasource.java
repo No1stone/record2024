@@ -74,7 +74,7 @@ public class ConfigDatasource {
     public EntityManagerFactory entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("com.origemite.querytouble.data.db.entity.**");
+        em.setPackagesToScan("com.origemite.jooqexame.data.db.entity.**");
         final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 //		vendorAdapter.setShowSql(true);
 //		vendorAdapter.setGenerateDdl(true);
