@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class JooqController {
 
-//    private final DSLContext dslContext;
+    private final DSLContext dslContext;
 
     @GetMapping("")
     public void test(){
-//        dslContext.selectFrom(Case2End)
+//        dslContext.selectFrom(Case2End);
     }
 
 }

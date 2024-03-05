@@ -20,9 +20,10 @@ https://www.jooq.org/javadoc/latest/org.jooq/module-summary.html
 Jooq Java Bean
 https://www.jooq.org/doc/latest/manual/code-generation/codegen-configuration/
 
-LazyConnection 사용하려면 bean으로 사용하는게 편해서
-콘피그로 등록하려는데...
-![jooqconf.png](img%2Fjooqconf.png)
-이렇게설정하면 QueryDsl처럼 Q파일이 생성되야할거같은데  
-묵묵부답이다.. 뭐가잘못된건지 찾아봐야거할같다.
-
+사람들 예제를보니 gradle, Maven으로 바로 의존성을 넣는데  
+LazyConnection 사용할땐 어떻게 하는거지 라는 의문이 든다..
+GenerationTool 로 codejen 을 생성해주는데
+Datasource를 받으니...
+LazyConnection 사용하려면 bean콘피그로 등록되는지 봐야하니...  
+![jooqdir.png](img%2Fjooqdir.png)
+얼추 성공...

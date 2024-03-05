@@ -1,5 +1,6 @@
 package com.origemite.jooqexame.conf;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
@@ -21,7 +22,6 @@ import org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy;
 public class ConfigJooq {
     private final ConfigDatasource configDatasource;
 //    private final DSLContext create;
-
     @Bean
     public DefaultConfiguration jooqConf() {
         DefaultConfiguration dc = new DefaultConfiguration();
@@ -43,7 +43,7 @@ public class ConfigJooq {
     }
 
     @Bean
-    public org.jooq.meta.jaxb.Configuration codeJenJooq() {
+    public org.jooq.meta.jaxb.Configuration codeJenJooq() throws Exception {
         org.jooq.meta.jaxb.Configuration configuration = new org.jooq.meta.jaxb.Configuration();
         configuration.withJdbc(new Jdbc()
                         .withDriver("net.sf.log4jdbc.DriverSpy")
@@ -90,7 +90,10 @@ public class ConfigJooq {
                                 .withDirectory("build/jooq")
                                 .withClean(true)
                         ));
-
+        GenerationTool.generate(configuration);
         return configuration;
     }
+
+
+
 }
