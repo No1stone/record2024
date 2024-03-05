@@ -6,9 +6,13 @@ QueryDSL 과 같은 Entity 기반의 쿼리 툴이라고한다.
 https://www.jooq.org/download/  
 2024/03/05 지원되는 Database  
 ![jooqusedb.png](img%2Fjooqusedb.png)
-
-https://www.jooq.org/doc/3.19/manual/
 jooq 공식문서
+https://www.jooq.org/doc/3.19/manual/
+Spring jooq 공식문서  
+https://docs.spring.io/spring-boot/docs/1.3.5.RELEASE/reference/html/boot-features-jooq.html
 
+![springdocjooq.png](img%2Fspringdocjooq.png)
+Java 기반의 쿼리를작성하고 싶으면 Codejen을 추가하라고한다.  
 
-
+Jooq Javadoc
+https://www.jooq.org/javadoc/latest/org.jooq/module-summary.html
