@@ -33,5 +33,6 @@ LazyConnection 사용하려면 bean콘피그로 등록되는지 봐야하니...
   
 QueryDsl은 Spring6, boot3으로오면서 Q file dir을 크게신경안써도 되게된거같던데  
 dir에 가봐도 Q파일은 안보인다. 
+근데 jooq은 생긴다.. 음..
 ![qfile.png](img%2Fqfile.png)
 
