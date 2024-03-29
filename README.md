@@ -9,4 +9,6 @@ https://spring.io/projects/spring-cloud-sleuth
 3.1.1 슬루스 사용해서 의존성 주입  
 
 ![img.png](src%2Fmain%2Fresources%2Fimg%2Fimg.png)  
-
+  
+에러 테그만 검색  
+![img_2.png](src%2Fmain%2Fresources%2Fimg%2Fimg_2.png)
