@@ -1,5 +1,5 @@
 ## ***Spring boot - PULSAR EXCAMEPLE*** ##
 
-Branch: springdevpulsar
-https://www.youtube.com/watch?v=94Grr5IAIyk
+Introducing Spring for Apache Pulsar
+Spring 공식 유튜브 펄사 소개
 
