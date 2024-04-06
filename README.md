@@ -57,4 +57,6 @@ Micrometer 모니터링 기능을 펄사와 연결 할 수 있다.
 
 
 향후 해볼 Exame  
-https://github.com/majusko/pulsar-java-spring-boot-starter
+https://github.com/onobc/intro-spring-pulsar-demo  
+https://github.com/majusko/pulsar-java-spring-boot-starter  
+
