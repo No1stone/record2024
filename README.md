@@ -52,7 +52,7 @@ Pulsar Function은 아직 기능이 제한되어있다.
 kafka처럼 avro 직렬 변환기를 사용 할 수 있다.  
 Spring cloud Stream Pulsar Binder 를 별도로 만들었다.  
 GaalVM 에서 Native img를 지원한다.  
-Micrometer 모니터링 기능을 펄사와 연결 할 수 있다. 
+Micrometer 모니터링 기능을 펄사와 연결 할 수 있다.  
 해당 영상의 git demo https://github.com/onobc/intro-spring-pulsar-demo  
 
 
