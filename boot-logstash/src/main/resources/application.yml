@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: bootlogstash
+server:
+  port: 9103
