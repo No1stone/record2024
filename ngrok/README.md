@@ -3,11 +3,11 @@
 ref: https://dashboard.ngrok.com/get-started/setup/linux
 
 ```bash
-	&& sudo apt install ngrok
+sudo apt install ngrok
 ```
 
 ![img.png](img%2Fimg.png)
-내토큰값 확인   
+내토큰 값 확인 및 입력   
 
 ![img_1.png](img%2Fimg_1.png)  
 오픈 할 호스트 포트 입력 
