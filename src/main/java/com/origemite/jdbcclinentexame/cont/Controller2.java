@@ -1,7 +1,7 @@
 package com.origemite.jdbcclinentexame.cont;
 
-import com.origemite.jdbcclinentexame.service.Service1;
-import com.origemite.jdbcclinentexame.vo.Mytest1;
+import com.origemite.jdbcclinentexame.service.Service2;
+import com.origemite.jdbcclinentexame.vo.Mytest2;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +16,11 @@ import java.util.List;
 @RequestMapping("/api/v1/cont2")
 public class Controller2 {
 
-    private final Service1 service1;
+    private final Service2 service2;
 
     @GetMapping("/test1")
-    public List<Mytest1> test1(){
-        return service1.findAll();
+    public List<Mytest2> test1() {
+        return service2.findAll();
     }
 
 
