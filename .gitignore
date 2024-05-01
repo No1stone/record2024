@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+/mysql-master-data/*
+/mysql-1/*
+/mysql-2/*

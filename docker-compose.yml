@@ -1,0 +1,53 @@
+version: "3"
+services:
+  mysql1:
+    container_name: mysql1
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: min
+      MYSQL_USER: won
+      MYSQL_PASSWORD: 1234
+      TZ: Asia/Seoul
+    #    env_file: .env
+    command:
+      - --server-id=1
+      - --log-bin=mysql-bin
+      - --gtid-mode=ON
+      - --enforce-gtid-consistency
+      - --sql-mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+      - --bind-address=0.0.0.0
+      - --mysqlx-bind-address=0.0.0.0
+    ports:
+      - "3321:3306"
+    volumes:
+      - ./mysql-1:/var/lib/mysql
+      - ./mysql-1:/etc/mysql/conf.d
+      - ./mysql-1:/var/log/mysql
+
+  mysql2:
+    container_name: mysql2
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: min
+      MYSQL_USER: won
+      MYSQL_PASSWORD: 1234
+      TZ: Asia/Seoul
+    #    env_file: .env
+    command:
+      - --server-id=1
+      - --log-bin=mysql-bin
+      - --gtid-mode=ON
+      - --enforce-gtid-consistency
+      - --sql-mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+      - --bind-address=0.0.0.0
+      - --mysqlx-bind-address=0.0.0.0
+    ports:
+      - "3322:3306"
+    volumes:
+      - ./mysql-2:/var/lib/mysql
+      - ./mysql-2:/etc/mysql/conf.d
+      - ./mysql-2:/var/log/mysql
