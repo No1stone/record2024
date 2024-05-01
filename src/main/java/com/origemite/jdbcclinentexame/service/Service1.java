@@ -31,15 +31,15 @@ public class Service1 {
                 .optional();
     }
 
-    public int create(Mytest1 post) {
+    public int create(Mytest1 mytest1) {
         return jdbcClient.sql("INSERT INTO mytest1(id,title,slug,date,time_to_read,tags) values(?,?,?,?,?,?)")
-                .params(List.of(post.id(),post.title(),post.slug(),post.date(),post.timeToRead(),post.tags()))
+                .params(List.of(mytest1.id(),mytest1.title(),mytest1.slug(),mytest1.date(),mytest1.timeToRead(),mytest1.tags()))
                 .update();
     }
 
-    public int update(Mytest1 post, String id) {
+    public int update(Mytest1 mytest1, String id) {
         return jdbcClient.sql("update mytest1 set title = ?, slug = ?, date = ?, time_to_read = ?, tags = ? where id = ?")
-                .params(List.of(post.title(), post.slug(), post.date(), post.timeToRead(), post.tags(), id))
+                .params(List.of(mytest1.title(), mytest1.slug(), mytest1.date(), mytest1.timeToRead(), mytest1.tags(), id))
                 .update();
     }
 
