@@ -1,0 +1,16 @@
+
+spring:
+  batch:
+    job:
+      names: ${job.name:NONE}
+    jdbc:
+      initialize-schema: ALWAYS
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3323/min
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+  jpa:
+    show-sql: true
+server:
+  port: 9111
